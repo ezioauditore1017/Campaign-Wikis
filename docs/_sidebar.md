@@ -1,40 +1,24 @@
-- [Campaigns](Campaigns/index.md)
-  - [ASOIAF](Campaigns/ASOIAF/index.md)
-    - [Session Summaries](Campaigns/ASOIAF/Session Summaries/index.md)
-      - [Index](Campaigns/ASOIAF/Session Summaries/index.md)
-    - [Transcripts](Campaigns/ASOIAF/Transcripts/index.md)
-      - [Index](Campaigns/ASOIAF/Transcripts/index.md)
-    - [Index](Campaigns/ASOIAF/index.md)
-  - [Deadly And Determined](Campaigns/Deadly and Determined/index.md)
-    - [Session Summaries](Campaigns/Deadly and Determined/Session Summaries/index.md)
-      - [Index](Campaigns/Deadly and Determined/Session Summaries/index.md)
-    - [Transcripts](Campaigns/Deadly and Determined/Transcripts/index.md)
-      - [Index](Campaigns/Deadly and Determined/Transcripts/index.md)
-    - [Index](Campaigns/Deadly and Determined/index.md)
-  - [Mascots Of Mischief](Campaigns/Mascots of Mischief/index.md)
-    - [Session Summaries](Campaigns/Mascots of Mischief/Session Summaries/index.md)
-      - [Index](Campaigns/Mascots of Mischief/Session Summaries/index.md)
-    - [Transcripts](Campaigns/Mascots of Mischief/Transcripts/index.md)
-      - [Index](Campaigns/Mascots of Mischief/Transcripts/index.md)
-      - [Session 7](Campaigns/Mascots of Mischief/Transcripts/Session 7.md)
-    - [Index](Campaigns/Mascots of Mischief/index.md)
-  - [Index](Campaigns/index.md)
-- [Settings](Settings/index.md)
-  - [Nirn](Settings/Nirn/index.md)
-    - [Items](Settings/Nirn/Items/index.md)
-      - [Index](Settings/Nirn/Items/index.md)
-    - [Locations](Settings/Nirn/Locations/index.md)
-      - [Index](Settings/Nirn/Locations/index.md)
-    - [NPCs](Settings/Nirn/NPCs/index.md)
-      - [Index](Settings/Nirn/NPCs/index.md)
-    - [Index](Settings/Nirn/index.md)
-  - [Planetos](Settings/Planetos/index.md)
-    - [Items](Settings/Planetos/Items/index.md)
-      - [Index](Settings/Planetos/Items/index.md)
-    - [Locations](Settings/Planetos/Locations/index.md)
-      - [Index](Settings/Planetos/Locations/index.md)
-    - [NPCs](Settings/Planetos/NPCs/index.md)
-      - [Index](Settings/Planetos/NPCs/index.md)
-    - [Index](Settings/Planetos/index.md)
-  - [Index](Settings/index.md)
-- [README](README.md)
+- [Home](index.html)
+
+  - [_sidebar](_sidebar.md)
+- Campaigns
+  - ASOIAF
+    - Session Summaries
+    - Transcripts
+  - Deadly and Determined
+    - Session Summaries
+    - Transcripts
+  - Mascots of Mischief
+    - Session Summaries
+    - Transcripts
+        - [Session 7](Campaigns/Mascots of Mischief/Transcripts/Session 7.md)
+  - [README](README.md)
+- Settings
+  - Nirn
+    - Items
+    - Locations
+    - NPCs
+  - Planetos
+    - Items
+    - Locations
+    - NPCs

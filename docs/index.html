@@ -2,21 +2,37 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>My Obsidian Vault</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Theme -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <title>Campaign Wiki</title>
+
+  <!-- Docsify Dark Theme -->
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css" id="theme">
+
+  <!-- Optional: Custom styling -->
+  <style>
+    /* Example: sidebar width */
+    .sidebar {
+      width: 300px;
+    }
+  </style>
 </head>
 <body>
-  <div id="app">Loading your vault...</div>
+  <div id="app"></div>
+
+  <!-- Docsify JS -->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/sidebar-collapse.min.js"></script>
+
   <script>
     window.$docsify = {
-      name: 'My Obsidian Vault',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 2,
-    }
+      name: 'Campaign Wiki',
+      loadSidebar: true,        // loads _sidebar.md
+      subMaxLevel: 2,           // how deep subheaders expand in page content
+      search: true,             // enables search plugin
+      auto2top: true,           // scroll to top on navigation
+      coverpage: false           // optional cover page
+    };
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>

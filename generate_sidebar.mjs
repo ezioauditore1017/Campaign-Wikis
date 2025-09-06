@@ -1,118 +1,41 @@
-// generate_sidebar.mjs
-import { promises as fs } from "fs";
+import fs from "fs";
 import path from "path";
 
-const DOCS = path.resolve("."); // Current folder
-const IGNORED_FILES = new Set(["index.html", "_sidebar.md", ".nojekyll"]);
-const MD_EXT = new Set([".md", ".markdown", ".txt"]); // Include .txt
+const docsDir = path.join("docs");
+const sidebarFile = path.join(docsDir, "_sidebar.md");
 
-// Convert Obsidian [[wikilinks]] to Markdown links
-function convertWikilinks(label) {
-  return label.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, target, display) => {
-    const file = encodeURIComponent(target.trim() + ".md");
-    const text = display ? display.trim() : target.trim();
-    return `[${text}](${file})`;
-  });
-}
+// Option: keep subfolder index.md files in sidebar? (true = include)
+const keepIndexFiles = false;
 
-function titleFromFilename(file) {
-  const base = file.replace(/\.(md|markdown|txt)$/i, "");
-  return base
-    .replace(/[-_]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/^\w/, (c) => c.toUpperCase());
-}
+// Recursive function to walk folders and build sidebar
+function walkDir(dir, level = 0) {
+    let result = "";
+    const indent = "  ".repeat(level); // two spaces per level
+    const items = fs.readdirSync(dir, { withFileTypes: true })
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
 
-async function getTitleFromFrontmatter(absPath) {
-  try {
-    const data = await fs.readFile(absPath, "utf8");
-    const m = data.match(/^---\s*[\s\S]*?\btitle:\s*["']?(.+?)["']?\s*[\s\S]*?---/i);
-    return m ? m[1].trim() : null;
-  } catch {
-    return null;
-  }
-}
+    for (const item of items) {
+        const fullPath = path.join(dir, item.name);
+        const relPath = path.relative(docsDir, fullPath).replace(/\\/g, "/");
 
-async function listDir(dirRel = "") {
-  const dirAbs = path.join(DOCS, dirRel);
-  const entries = await fs.readdir(dirAbs, { withFileTypes: true });
-
-  const dirs = [];
-  const files = [];
-  for (const e of entries) {
-    if (e.name.startsWith(".")) continue;
-    if (IGNORED_FILES.has(e.name)) continue;
-    if (e.isDirectory()) dirs.push(e.name);
-    else if (MD_EXT.has(path.extname(e.name).toLowerCase())) files.push(e.name);
-  }
-
-  dirs.sort((a, b) => a.localeCompare(b));
-  files.sort((a, b) => a.localeCompare(b));
-  return { dirs, files, dirRel };
-}
-
-async function* walk(dirRel = "", depth = 0) {
-  const { dirs, files } = await listDir(dirRel);
-
-  // Check for folder README.md (landing page)
-  const readmeIndex = files.findIndex(f => /^readme\.(md|markdown)$/i.test(f));
-  let readme = null;
-  if (readmeIndex !== -1) {
-    readme = files.splice(readmeIndex, 1)[0];
-  }
-
-  if (dirRel) {
-    const folderTitle = titleFromFilename(path.basename(dirRel));
-    if (readme) {
-      const rel = path.posix.join("/", dirRel.split(path.sep).join("/"), readme);
-      const fmTitle = await getTitleFromFrontmatter(path.join(DOCS, dirRel, readme));
-      const labelRaw = fmTitle || folderTitle;
-      const label = convertWikilinks(labelRaw);
-      yield { depth: depth - 1, label, link: encodeURI(rel) };
-    } else {
-      yield { depth: depth - 1, label: folderTitle, link: null };
+        if (item.isDirectory()) {
+            result += `${indent}- ${item.name}\n`; // folder as collapsible category
+            result += walkDir(fullPath, level + 1);  // recurse into folder
+        } else if (item.isFile() && item.name.endsWith(".md")) {
+            const name = item.name.replace(".md", "");
+            if (name.toLowerCase() !== "index" || keepIndexFiles) {
+                result += `${indent}  - [${name}](${relPath})\n`;
+            }
+        }
     }
-  }
 
-  // Files
-  for (const f of files) {
-    const rel = path.posix.join("/", dirRel.split(path.sep).join("/"), f);
-    const fmTitle = await getTitleFromFrontmatter(path.join(DOCS, dirRel, f));
-    const rawLabel = fmTitle || titleFromFilename(f);
-    const label = convertWikilinks(rawLabel);
-    yield { depth, label, link: encodeURI(rel) };
-  }
-
-  // Subfolders
-  for (const d of dirs) {
-    for await (const child of walk(path.join(dirRel, d), depth + 1)) {
-      yield child;
-    }
-  }
+    return result;
 }
 
-async function buildSidebar() {
-  let out = "";
+// Build sidebar
+let sidebar = "- [Home](index.html)\n\n";
+sidebar += walkDir(docsDir);
 
-  // Root README.md = Home
-  try {
-    await fs.access(path.join(DOCS, "README.md"));
-    out += `- [Home](/README.md)\n`;
-  } catch {}
-
-  for await (const item of walk("", 1)) {
-    const indent = "  ".repeat(item.depth);
-    if (item.link) out += `${indent}- [${item.label}](${item.link})\n`;
-    else out += `${indent}- ${item.label}\n`;
-  }
-
-  const sidebarPath = path.join(DOCS, "_sidebar.md");
-  await fs.writeFile(sidebarPath, out.trim() + "\n", "utf8");
-  console.log(`✅ Wrote ${path.relative(process.cwd(), sidebarPath)}`);
-}
-
-buildSidebar().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Write to _sidebar.md
+fs.writeFileSync(sidebarFile, sidebar);
+console.log("✅ _sidebar.md generated with fully nested collapsible categories.");
