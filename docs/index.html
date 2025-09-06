@@ -4,35 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campaign Wiki</title>
+  
+  <!-- Docsify core -->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  
+  <!-- Docsify plugins -->
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/sidebar-collapse.min.js"></script>
 
-  <!-- Docsify Dark Theme -->
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css" id="theme">
+  <!-- Docsify theme -->
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 
-  <!-- Optional custom styles -->
+  <!-- Optional dark mode customization -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
     }
-    .sidebar {
-      width: 300px; /* adjust sidebar width */
+    a {
+      color: #4ea1f3;
     }
   </style>
 </head>
 <body>
   <div id="app"></div>
 
-  <!-- Docsify JS -->
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/sidebar-collapse.min.js"></script>
-
   <script>
     window.$docsify = {
       name: 'Campaign Wiki',
-      loadSidebar: true,        // load _sidebar.md
-      subMaxLevel: 2,           // depth of subheaders expanded
-      search: true,             // enable search
-      auto2top: true            // scroll to top on navigation
+      repo: 'https://github.com/ezioauditore1017/campaign-wikis',
+      loadSidebar: true,        // Load _sidebar.md
+      subMaxLevel: 2,           // Collapsible depth
+      search: true,             // Enable search plugin
+      darkMode: true            // Enables theme switching
     };
   </script>
 </body>

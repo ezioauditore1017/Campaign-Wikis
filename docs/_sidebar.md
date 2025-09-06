@@ -1,19 +1,19 @@
-- Campaigns
-  - ASOIAF
-    - Session Summaries
-    - Transcripts
-  - Deadly and Determined
-    - Session Summaries
-    - Transcripts
-  - Mascots of Mischief
-    - Session Summaries
-    - Transcripts
-- Settings
-  - Nirn
-    - Items
-    - Locations
-    - NPCs
-  - Planetos
-    - Items
-    - Locations
-    - NPCs
+  - [Campaigns](Campaigns/index.md)
+    - [ASOIAF](Campaigns/ASOIAF/index.md)
+      - [Session Summaries](Campaigns/ASOIAF/Session Summaries/index.md)
+      - [Transcripts](Campaigns/ASOIAF/Transcripts/index.md)
+    - [Deadly and Determined](Campaigns/Deadly and Determined/index.md)
+      - [Session Summaries](Campaigns/Deadly and Determined/Session Summaries/index.md)
+      - [Transcripts](Campaigns/Deadly and Determined/Transcripts/index.md)
+    - [Mascots of Mischief](Campaigns/Mascots of Mischief/index.md)
+      - [Session Summaries](Campaigns/Mascots of Mischief/Session Summaries/index.md)
+      - [Transcripts](Campaigns/Mascots of Mischief/Transcripts/index.md)
+  - [Settings](Settings/index.md)
+    - [Nirn](Settings/Nirn/index.md)
+      - [Items](Settings/Nirn/Items/index.md)
+      - [Locations](Settings/Nirn/Locations/index.md)
+      - [NPCs](Settings/Nirn/NPCs/index.md)
+    - [Planetos](Settings/Planetos/index.md)
+      - [Items](Settings/Planetos/Items/index.md)
+      - [Locations](Settings/Planetos/Locations/index.md)
+      - [NPCs](Settings/Planetos/NPCs/index.md)
