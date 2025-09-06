@@ -1,21 +1,22 @@
-- [Docs](/docs/README.md)
-    - Campaigns
-      - ASOIAF
-        - Session Summaries
-        - Transcripts
-      - Deadly and Determined
-        - Session Summaries
-        - Transcripts
-      - Mascots of Mischief
-        - Session Summaries
-        - Transcripts
-          - [Session 7](/docs/Campaigns/Mascots%20of%20Mischief/Transcripts/Session%207.md)
-  - Settings
-    - Nirn
-      - Items
-      - Locations
-      - NPCs
-    - Planetos
-      - Items
-      - Locations
-      - NPCs
+- [Campaigns](Campaigns/index.md)
+  - [ASOIAF](Campaigns/ASOIAF/index.md)
+    - [Session Summaries](Campaigns/ASOIAF/Session Summaries/index.md)
+      - [Index](Campaigns/ASOIAF/Session Summaries/index.md)
+    - [Transcripts](Campaigns/ASOIAF/Transcripts/index.md)
+      - [Index](Campaigns/ASOIAF/Transcripts/index.md)
+    - [Index](Campaigns/ASOIAF/index.md)
+  - [Deadly And Determined](Campaigns/Deadly and Determined/index.md)
+    - [Session Summaries](Campaigns/Deadly and Determined/Session Summaries/index.md)
+      - [Index](Campaigns/Deadly and Determined/Session Summaries/index.md)
+    - [Transcripts](Campaigns/Deadly and Determined/Transcripts/index.md)
+      - [Index](Campaigns/Deadly and Determined/Transcripts/index.md)
+    - [Index](Campaigns/Deadly and Determined/index.md)
+  - [Mascots Of Mischief](Campaigns/Mascots of Mischief/index.md)
+    - [Session Summaries](Campaigns/Mascots of Mischief/Session Summaries/index.md)
+      - [Index](Campaigns/Mascots of Mischief/Session Summaries/index.md)
+    - [Transcripts](Campaigns/Mascots of Mischief/Transcripts/index.md)
+      - [Index](Campaigns/Mascots of Mischief/Transcripts/index.md)
+      - [Session 7](Campaigns/Mascots of Mischief/Transcripts/Session 7.md)
+    - [Index](Campaigns/Mascots of Mischief/index.md)
+  - [Index](Campaigns/index.md)
+- [README](README.md)
