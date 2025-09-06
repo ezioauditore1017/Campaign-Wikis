@@ -1,15 +1,15 @@
-- [README.md](/README.md.md)
-  - Campaigns
-    - ASOIAF
-      - Session Summaries
-      - Transcripts
-    - Deadly and Determined
-      - Session Summaries
-      - Transcripts
-    - Mascots of Mischief
-      - Session Summaries
-      - Transcripts
-        - [Session 7](/Campaigns/Mascots%20of%20Mischief/Transcripts/Session%207.md)
+- [Docs](/docs/README.md)
+    - Campaigns
+      - ASOIAF
+        - Session Summaries
+        - Transcripts
+      - Deadly and Determined
+        - Session Summaries
+        - Transcripts
+      - Mascots of Mischief
+        - Session Summaries
+        - Transcripts
+          - [Session 7](/docs/Campaigns/Mascots%20of%20Mischief/Transcripts/Session%207.md)
   - Settings
     - Nirn
       - Items
