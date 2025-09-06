@@ -8,11 +8,13 @@
   <!-- Docsify Dark Theme -->
   <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css" id="theme">
 
-  <!-- Optional: Custom styling -->
+  <!-- Optional custom styles -->
   <style>
-    /* Example: sidebar width */
+    body {
+      font-family: Arial, sans-serif;
+    }
     .sidebar {
-      width: 300px;
+      width: 300px; /* adjust sidebar width */
     }
   </style>
 </head>
@@ -27,11 +29,10 @@
   <script>
     window.$docsify = {
       name: 'Campaign Wiki',
-      loadSidebar: true,        // loads _sidebar.md
-      subMaxLevel: 2,           // how deep subheaders expand in page content
-      search: true,             // enables search plugin
-      auto2top: true,           // scroll to top on navigation
-      coverpage: false           // optional cover page
+      loadSidebar: true,        // load _sidebar.md
+      subMaxLevel: 2,           // depth of subheaders expanded
+      search: true,             // enable search
+      auto2top: true            // scroll to top on navigation
     };
   </script>
 </body>

@@ -1,6 +1,3 @@
-- [Home](index.html)
-
-  - [_sidebar](_sidebar.md)
 - Campaigns
   - ASOIAF
     - Session Summaries
@@ -11,8 +8,6 @@
   - Mascots of Mischief
     - Session Summaries
     - Transcripts
-        - [Session 7](Campaigns/Mascots of Mischief/Transcripts/Session 7.md)
-  - [README](README.md)
 - Settings
   - Nirn
     - Items
