@@ -2,42 +2,31 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campaign Wiki</title>
-  
-  <!-- Docsify core -->
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  
-  <!-- Docsify plugins -->
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/sidebar-collapse.min.js"></script>
-
-  <!-- Docsify theme -->
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-
-  <!-- Optional dark mode customization -->
-  <style>
-    body {
-      background-color: #1e1e1e;
-      color: #ffffff;
-    }
-    a {
-      color: #4ea1f3;
-    }
-  </style>
+  <title>Campaign Wikis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <!-- Force Dark Mode -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable/dist/css/theme-simple-dark.css">
 </head>
 <body>
-  <div id="app"></div>
+  <!-- Docsify app container -->
+  <div id="app">Loading...</div>
 
   <script>
     window.$docsify = {
-      name: 'Campaign Wiki',
-      repo: 'https://github.com/ezioauditore1017/campaign-wikis',
-      loadSidebar: true,        // Load _sidebar.md
-      subMaxLevel: 2,           // Collapsible depth
-      search: true,             // Enable search plugin
-      darkMode: true            // Enables theme switching
-    };
+      name: 'Campaign Wikis',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      sidebarDisplayLevel: 2, // collapse/expand sidebar
+      search: 'auto'
+    }
   </script>
+
+  <!-- Docsify core -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- Search plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Collapsible sidebar plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
